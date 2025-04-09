@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Anomaly Detector</title>
+</head>
+<body>
+    <h1>Login Anomaly Detection</h1>
+    <form action="/predict" method="post">
+        <label for="timestamp">Timestamp:</label><br>
+        <input type="datetime-local" name="timestamp" required><br><br>
+
+        <label for="ip">IP Address:</label><br>
+        <input type="text" name="ip" required><br><br>
+
+        <label for="device">Device:</label><br>
+        <input type="text" name="device" required><br><br>
+
+        <label for="location">Location:</label><br>
+        <input type="text" name="location" required><br><br>
+
+        <button type="submit">Check Login</button>
+    </form>
+
+    {% if result %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
